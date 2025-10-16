@@ -186,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function proximoTurno() {
         if (questionIndex >= shuffledQuestions.length) {
             questionIndex = 0; // Reinicia as perguntas se acabarem
+            shuffleArray(shuffledQuestions); // Reembaralha as perguntas para mais variedade
         }
         mostrarPergunta();
         showScreen('question');
@@ -390,6 +391,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     btnKick.addEventListener('click', handleKick);
+
+    btnBackToMenu.addEventListener('click', () => {
+        showScreen('menu');
+    });
 
     // Estado inicial: mostrar o menu
     showScreen('menu');
