@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MalufSoccer - Pênaltis Didáticos</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="app">
+        <!-- MENU PRINCIPAL -->
+        <section id="menu" class="screen active">
+            <div class="menu-container">
+                <h1 class="game-title">MalufSoccer</h1>
+                <p class="game-subtitle"></p>
+                <div class="menu-buttons">
+                    <button id="btn1v1" class="menu-btn">Jogar 1 vs 1</button>
+                    <button id="btn2v2" class="menu-btn">Jogar 2 vs 2</button>
+                    <button id="btnRegras" class="menu-btn1">Regras</button>
+                    <button id="btnSair" class="menu-btn secondary">Sair</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TELA DE REGRAS -->
+        <section id="rules-screen" class="screen">
+            <div class="rules-container">
+                <h2>Regras do Jogo</h2>
+                <div class="rules-content">
+                    <p><strong>Objetivo:</strong> Marcar mais gols que seu oponente respondendo corretamente às perguntas.</p>
+                    <h3>Como Jogar:</h3>
+                    <ol>
+                        <li>Escolha o modo de jogo: 1 vs 1 ou 2 vs 2.</li>
+                        <li>Na sua vez, uma pergunta de conhecimentos gerais será exibida.</li>
+                        <li>Digite sua resposta no campo e clique em "Responder".</li>
+                        <li><strong>Se acertar:</strong> Você ganha o direito de chutar ao gol! Escolha um dos 9 locais no gol e clique em "CHUTAR".</li>
+                        <li><strong>Se errar:</strong> Você perde a vez e o próximo jogador responde a uma nova pergunta.</li>
+                    </ol>
+                    <p>Vence o jogador ou equipe que tiver mais gols ao final das rodadas!</p>
+                </div>
+                <button id="btnVoltarMenu" class="menu-btn">Voltar</button>
+            </div>
+        </section>
+
+        <!-- TELA DE PERGUNTAS -->
+        <section id="question-screen" class="screen">
+            <div class="question-container">
+                <h2 id="turnInfo">Vez do Jogador 1</h2>
+                <p id="question-text">Carregando pergunta...</p>
+                <input type="text" id="answer-input" placeholder="Digite sua resposta..." autocomplete="off">
+                <button id="submit-answer">Responder</button>
+                <p id="answer-feedback"></p>
+            </div>
+        </section>
+
+        <!-- TELA DE CHUTE -->
+        <section id="kick-screen" class="screen">
+            <div id="kick-container">
+                <h2 id="kick-turn-info">Prepare o chute!</h2>
+
+                <div id="scoreboard">
+                    <span id="score-team1">Equipe 1: 0</span> - <span id="score-team2">Equipe 2: 0</span>
+                </div>
+
+                <div id="goal-area-container">
+                    <div id="ball"></div>
+                    <div id="goal">
+                        <div id="goalkeeper"></div>
+                        <div class="goal-area" data-pos="top-left"></div>
+                        <div class="goal-area" data-pos="top-center"></div>
+                        <div class="goal-area" data-pos="top-right"></div>
+                        <div class="goal-area" data-pos="middle-left"></div>
+                        <div class="goal-area" data-pos="middle-center"></div>
+                        <div class="goal-area" data-pos="middle-right"></div>
+                        <div class="goal-area" data-pos="bottom-left"></div>
+                        <div class="goal-area" data-pos="bottom-center"></div>
+                        <div class="goal-area" data-pos="bottom-right"></div>
+                    </div>
+                </div>
+
+                <button id="btnKick" disabled>CHUTAR</button>
+                <p id="kick-feedback"></p>
+            </div>
+        </section>
+
+        <!-- TELA DE VITÓRIA -->
+        <section id="victory-screen" class="screen">
+            <div class="victory-container">
+                <h2 id="victory-message">Vitória!</h2>
+                <p id="victory-details">Parabéns à equipe vencedora!</p>
+                <button id="btnBackToMenu">Voltar ao Menu</button>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
